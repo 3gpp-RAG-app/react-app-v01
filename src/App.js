@@ -10,16 +10,17 @@ import Message from './components/Message';
 const App = () => {
   return (
     <Router>
-      <div className="flex">
-        <Sidebar />
-        <Message/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+      <div className='flex h-screen bg-[#85A4B6] bg-opacity-50'>
+        <div className='w-1/5 p-4'><Sidebar/></div>
+        <div className='w-4/5 p-4 '><Message/></div>
       </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+   
     </Router>
   );
 };
 
-export default App;
+export default App
