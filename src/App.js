@@ -1,16 +1,18 @@
-import React , { useState, useEffect } from 'react';
+import React , { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar'
 import Home from './components/Home';
 import TermsAndConditions from './components/TermsAndConditions';
 import Message from './components/Message';
 import ConsentDialog from './components/ConsentDialog'
+import { apiEndpoints } from './config/EndPoints'
+import axios from 'axios';
 
 
 
 const App = () => {
-
   const [showConsentDialog, setShowConsentDialog] = useState(false);
+  const [uid, setUid] = useState(null);
 
   useEffect(() => {
     const hasAgreed = localStorage.getItem('hasAgreed');
@@ -22,8 +24,22 @@ const App = () => {
     setShowConsentDialog(false);
   };
 
+  const fetchUid = useCallback(async () => {
+    try {
+      const response = await axios.get(apiEndpoints.session);
+      console.log(response);
+      const data = response.data;
 
+      sessionStorage.setItem('uid', data.uid);
+      setUid(data.uid); 
+    } catch (error) {
+      console.error('Error fetching UID:', error);
+    }
+  }, []);
 
+  useEffect(() => {
+    fetchUid();
+  }, [fetchUid]);
 
   return (
     <Router>

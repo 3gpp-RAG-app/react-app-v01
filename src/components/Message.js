@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { apiEndpoints } from '../config/EndPoints.js';
+import { apiEndpoints } from '../config/EndPoints';
 
 const Message = () => {
   const [userInput, setUserInput] = useState('');
@@ -43,7 +43,7 @@ const Message = () => {
       };
   
       setChatMessages((prevMessages) => [...prevMessages, textMessage]);
-      console.log(chatMessages);
+      
     } catch (error) {
       console.error('Error:', error);
       alert("An error occurred. Please try again.");
@@ -51,6 +51,18 @@ const Message = () => {
   
     setUserInput('');
   };
+
+  useEffect(() => {
+    return () => {
+      const uid = sessionStorage.getItem('uid');
+      console.log(uid)
+      const logs = JSON.stringify(chatMessages);
+
+      axios.post(apiEndpoints.logs, { uid, logs })
+        .then(() => console.log('Session logs posted successfully'))
+        .catch((error) => console.error('Error posting session logs:', error));
+    };
+  }, [chatMessages]);
 
 
   return (
