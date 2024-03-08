@@ -27,7 +27,6 @@ const App = () => {
   const fetchUid = useCallback(async () => {
     try {
       const response = await axios.get(apiEndpoints.session);
-      console.log(response);
       const data = response.data;
 
       sessionStorage.setItem('uid', data.uid);

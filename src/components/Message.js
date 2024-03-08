@@ -43,7 +43,7 @@ const Message = () => {
       };
   
       setChatMessages((prevMessages) => [...prevMessages, textMessage]);
-
+      
     } catch (error) {
       console.error('Error:', error);
       alert("An error occurred. Please try again.");
@@ -53,18 +53,27 @@ const Message = () => {
   };
 
   useEffect(() => {
+    const handleBeforeUnload = () => {
+      try {
+        const uid = sessionStorage.getItem('uid');
+        const logs = JSON.stringify(chatMessages);
+  
+        const formData = new FormData();
+        formData.append('uid', uid);
+        formData.append('logs', logs);
+  
+        navigator.sendBeacon(apiEndpoints.logs, formData);
+      } catch (error) {
+        console.error('Error posting session logs:', error);
+      }
+    };
+  
+    window.addEventListener('beforeunload', handleBeforeUnload);
   
     return () => {
-      const uid = sessionStorage.getItem('uid');
-      console.log(uid);
-      const logs = JSON.stringify(chatMessages);
-  
-      axios
-        .post(apiEndpoints.logs, { uid, logs })
-        .then(() => console.log('Session logs posted successfully'))
-        .catch((error) => console.error('Error posting session logs:', error));
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, []);
+  }, [chatMessages]);
 
 
   return (
