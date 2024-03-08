@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const ConsentDialog = ({ onAgree, onClose }) => {
   return (
-    <div className='overflow-auto container mx-auto px-4 bg-sky-900 rounded-md bg-opacity-20 h-3/6  shadow-lg shadow-sky-90060'>
-      <div className='m-20 p-10 font-sans text-lg '>
+    <div className='overflow-auto bg-[#85A4B6] bg-opacity-50 rounded-md max-w-4xl h-4/6  shadow-lg shadow-sky-90060'>
+      <div className='m-10 p-10 font-sans text-lg '>
             <div className='text-justify flex flex-col leading-relaxed space-y-4'>
                 <p>Hello there!</p>
                 <p>We value privacy and we would like to transparently communicate the data collection and usage practices of our open-source 3gg chat development project.</p>

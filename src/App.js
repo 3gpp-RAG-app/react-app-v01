@@ -22,16 +22,12 @@ const App = () => {
     setShowConsentDialog(false);
   };
 
-  const handleLearnMore = () => {
-    // Implement action to provide more information
-  };
-
 
 
 
   return (
     <Router>
-      <div className='flex h-screen bg-[#85A4B6] bg-opacity-50'>
+      <div className='flex h-screen bg-[#85A4B6] bg-opacity-50 relative'>
         <div className='w-1/5 p-4'><Sidebar/></div>
         <div className='w-4/5 p-4 '><Message/></div>
 
@@ -39,7 +35,7 @@ const App = () => {
 
       {showConsentDialog && (
             <div className='fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center z-50'>
-              <ConsentDialog onAgree={handleAgree} onClose={handleLearnMore} />
+              <ConsentDialog onAgree={handleAgree} />
             </div>
           )}
 
