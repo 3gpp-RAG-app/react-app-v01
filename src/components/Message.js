@@ -11,11 +11,18 @@ const Message = () => {
   const [userInput, setUserInput] = useState('');
   const [serverResponse, setServerResponse] = useState([]);
   const [chatMessages, setChatMessages] = useState([]);
-  const [showSource, setShowSource] = useState(false);
+  const [showSourceArray, setShowSourceArray] = useState([]);
 
-  const handleToggleClick = () => {
-    setShowSource(!showSource);
+
+  const handleToggleClick = (index) => {
+    setShowSourceArray((prevArray) => {
+      const newArray = [...prevArray];
+      newArray[index] = !newArray[index];
+      return newArray;
+    });
   };
+
+
   const submitToDatabase = async () => {
     if (!userInput) {
       alert("Please enter a valid input");
@@ -41,9 +48,16 @@ const Message = () => {
       
         console.log(completion.choices[0]);
      
-      // Server's response
 
-      const textMessage = { type: 'server', text:completion.choices[0].message.content };
+        const textMessage = {
+          type: 'server',
+          text: completion.choices[0].message.content,
+          source: {
+            parentDoc: response.data.results.results_parent_doc,
+            contentList: response.data.results.results_content_list,
+            text: response.data.results.results_text,
+          },
+        };
 
       setChatMessages((prevMessages) => [...prevMessages, textMessage]);
       console.log(chatMessages)
@@ -74,14 +88,15 @@ const Message = () => {
               <div className=" bg-white rounded-md p-3 m-3 flex flex-row">
                 <div className='basis-6/7 pl-3'> {message.text}</div>
               </div>
-            ) : (
+             ) : (
               <div className="bg-white rounded-md p-3 m-3">
                 <div>{message.text}</div>
-                <div  className='pt-4 text-sm italic' onClick={handleToggleClick} style={{ cursor: 'pointer' }}>
-                  Source: {serverResponse.results.results_parent_doc} section {serverResponse.results.results_content_list}</div>
-                {showSource && (
+                <div className='pt-4 text-sm italic' onClick={() => handleToggleClick(index)} style={{ cursor: 'pointer' }}>
+                Source: {message.source.parentDoc} section {message.source.contentList}
+                </div>
+                {showSourceArray[index] && (
                   <div>
-                    {serverResponse.results.results_text}
+                    {message.source.text}
                   </div>
                 )}
               </div>

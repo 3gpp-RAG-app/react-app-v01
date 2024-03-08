@@ -2,7 +2,7 @@ import React , { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar'
 import Home from './components/Home';
-import About from './components/About';
+import TermsAndConditions from './components/TermsAndConditions';
 import Message from './components/Message';
 import ConsentDialog from './components/ConsentDialog'
 
@@ -38,11 +38,10 @@ const App = () => {
               <ConsentDialog onAgree={handleAgree} />
             </div>
           )}
-
  
       <Routes>
         <Route path="/user-guide" element={<Home />} />
-        <Route path="/privacy" element={<About />} />
+        <Route path="/privacy" element={<TermsAndConditions />} />
       </Routes>
    
     </Router>
