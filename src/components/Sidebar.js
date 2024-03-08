@@ -9,11 +9,11 @@ const Sidebar = () => {
           <span className="text-xl font-semibold">Menu</span>
         </div>
         <nav className="mt-2">
-          <Link to="/" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
-            Home
+          <Link to="/ser-guide" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
+            User guide
           </Link>
-          <Link to="/about" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
-            About
+          <Link to="/privacy" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
+            Terms and Privacy
           </Link>
         </nav>
       </div>
