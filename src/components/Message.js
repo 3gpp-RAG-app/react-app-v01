@@ -43,7 +43,7 @@ const Message = () => {
       };
   
       setChatMessages((prevMessages) => [...prevMessages, textMessage]);
-      
+
     } catch (error) {
       console.error('Error:', error);
       alert("An error occurred. Please try again.");
@@ -53,16 +53,18 @@ const Message = () => {
   };
 
   useEffect(() => {
+  
     return () => {
       const uid = sessionStorage.getItem('uid');
-      console.log(uid)
+      console.log(uid);
       const logs = JSON.stringify(chatMessages);
-
-      axios.post(apiEndpoints.logs, { uid, logs })
+  
+      axios
+        .post(apiEndpoints.logs, { uid, logs })
         .then(() => console.log('Session logs posted successfully'))
         .catch((error) => console.error('Error posting session logs:', error));
     };
-  }, [chatMessages]);
+  }, []);
 
 
   return (
