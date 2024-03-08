@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { apiEndpoints } from '../config/EndPoints.js';
-import OpenAI from "openai";
-
-
 
 const Message = () => {
-
-  const openai = new OpenAI({apiKey:process.env.REACT_APP_API_KEY, dangerouslyAllowBrowser: true});
   const [userInput, setUserInput] = useState('');
   const [serverResponse, setServerResponse] = useState([]);
   const [chatMessages, setChatMessages] = useState([]);
@@ -28,50 +23,32 @@ const Message = () => {
       alert("Please enter a valid input");
       return;
     }
-
+  
     try {
       // User's message
       const userMessage = { type: 'user', text: userInput };
       setChatMessages((prevMessages) => [...prevMessages, userMessage]);
-
-      const response = await axios.post(apiEndpoints.search, { query: userInput });
-      setServerResponse(response.data)
-
-      async function main() {
-        const completion = await openai.chat.completions.create({
-          messages: [{ role: "system", content: "sYou are a 3GPP specialized assistant that anwers to the user based on the provided reference."
-          + "here is user's request"+ userInput+ " here is the resfernce between squre brakets: "
-          +  "[" + response.data.results.results_text + "]"
-          + '. If the provided reference do not contain answer to what user requested respond "I could not find an answer."' }],
-          model: "gpt-3.5-turbo",
-        });
-      
-        console.log(completion.choices[0]);
-     
-
-        const textMessage = {
-          type: 'server',
-          text: completion.choices[0].message.content,
-          source: {
-            parentDoc: response.data.results.results_parent_doc,
-            contentList: response.data.results.results_content_list,
-            text: response.data.results.results_text,
-          },
-        };
-
-      setChatMessages((prevMessages) => [...prevMessages, textMessage]);
-      console.log(chatMessages)
-
   
-    }
-      
-    main();
-
+      const response = await axios.post(apiEndpoints.search, { query: userInput });
+      setServerResponse(response.data);
+  
+      const textMessage = {
+        type: 'server',
+        text: response.data.results.augmented_response,
+        source: {
+          parentDoc: response.data.results.results_parent_doc,
+          contentList: response.data.results.results_content_list,
+          text: response.data.results.results_text,
+        },
+      };
+  
+      setChatMessages((prevMessages) => [...prevMessages, textMessage]);
+      console.log(chatMessages);
     } catch (error) {
       console.error('Error:', error);
       alert("An error occurred. Please try again.");
     }
-
+  
     setUserInput('');
   };
 
