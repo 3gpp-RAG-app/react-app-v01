@@ -112,7 +112,7 @@ const Message = () => {
         </div>
       </div>
 
-      {!isChatbotTyping && <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
+      <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
         <div className="flex size-full">
           <textarea
             type="textarea"
@@ -131,18 +131,18 @@ const Message = () => {
               }
             }}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
+              if (e.key === "Enter" && !e.shiftKey && !isChatbotTyping) {
                 e.preventDefault(); // Prevent default form submission
                 submitToDatabase(); // Call your submit function
               }
             }}
           />
 
-          <button onClick={submitToDatabase} className="rounded-full w-32">
+          {!isChatbotTyping && <button onClick={submitToDatabase} className="rounded-full w-32">
             Send
-          </button>
+          </button>}
         </div>
-      </div>}
+      </div>
 
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
     </div>
