@@ -20,9 +20,9 @@ const Message = () => {
 
   const submitToDatabase = async () => {
 
-    const userMessageForAPI = userInput;
+    const userMessageForAPI = userInput; // change the input to use usermessageforapi instead so input can be cleared
     setUserInput('');
-    const textArea = document.getElementById("user_input");
+    const textArea = document.getElementById("user_input"); // setting the textarea height back to normal
     textArea.style.height = `50px`;
     
     if (!userMessageForAPI) {
@@ -108,9 +108,10 @@ const Message = () => {
               )}
             </div>
           ))}
-          {isChatbotTyping && <div className="bg-white rounded-md p-3 m-3">Chatbot is typing...</div>}
         </div>
+        
       </div>
+          {isChatbotTyping && <div className="m-6">Chatbot is typing...</div>}
 
       <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
         <div className="flex size-full">
@@ -121,27 +122,26 @@ const Message = () => {
             placeholder="Enter your text here"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
-            style={{ height: "50px", minHeight: "50px", maxHeight: "200px" }}
+            style={{height: "50px", minHeight: "50px", maxHeight: "200px"}}
             onInput={() => {
               const textArea = document.getElementById("user_input");
-              if (textArea.value.trim() === "") {
-                textArea.style.height = "50px"; // Set back to base height if empty
-              } else {
-                textArea.style.height = `${Math.min(textArea.scrollHeight, 200)}px`;
-              }
+              textArea.style.height = "50px"; // initial height 50px
+              const newHeight = Math.max(50, textArea.scrollHeight);
+              textArea.style.height = `${newHeight}px`;
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey && !isChatbotTyping) {
                 e.preventDefault(); // Prevent default form submission
-                submitToDatabase(); // Call your submit function
+                submitToDatabase(); // Call submit function
               }
             }}
           />
 
-          {!isChatbotTyping && <button onClick={submitToDatabase} className="rounded-full w-32">
+          
+        </div>
+        {!isChatbotTyping && <button onClick={submitToDatabase} className="rounded-full w-32">
             Send
           </button>}
-        </div>
       </div>
 
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
