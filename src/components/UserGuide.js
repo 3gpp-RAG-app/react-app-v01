@@ -1,4 +1,5 @@
 import ug from './assets/ug.jpeg'
+import ug1 from './assets/ug1.png'
 const UserGuide = () => {
     return (
       <div className="overflow-auto bg-white bg-opacity-70 h-full rounded-md">
@@ -52,7 +53,9 @@ const UserGuide = () => {
                     <li>Users can rate answers, helping us evaluate retrieval performance.</li>
                 
                 <img src={ug}  alt="UG"></img>
-                <p className='italic'>Figure 1: Example of compilation from the chat app</p>
+                <p className='italic pb-5'>Figure 1: Example of succefull compilation from the chat app</p>
+                <img src={ug1}  alt="UG"></img>
+                <p className='italic'>Figure 2: Example of chat app refrains from generating answers to out of scope topics</p>
                 </ul>
             </li>
 

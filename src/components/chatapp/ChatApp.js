@@ -35,7 +35,7 @@ const Message = () => {
     }
   
     try {
-      // User's message
+     
       const userMessage = { type: 'user', text: userInput };
       setChatMessages((prevMessages) => [...prevMessages, userMessage]);
   
