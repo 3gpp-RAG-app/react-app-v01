@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { apiEndpoints } from '../config/EndPoints';
+import { apiEndpoints } from '../../config/EndPoints';
+import UserInput from './UserInput';
+import ChatMessagesContainer from './ChatMessagesContainer';
 
 const Message = () => {
   const [userInput, setUserInput] = useState('');
@@ -93,72 +95,16 @@ const Message = () => {
   return (
     <div className='flex h-full flex-col space-y-4 rounded-md border'>
       <div className="basis-1/7 bg-white pl-5 pt-3 pb-3">3gpp Chat V0.1</div>
+      <ChatMessagesContainer
+        chatMessages={chatMessages}
+        handleToggleClick={handleToggleClick}
+        showSourceArray={showSourceArray}
+        responseRatings={responseRatings}
+        handleRating={handleRating}
+      />
+     
   
-      <div className='h-full basis-5/7 bg-white bg-opacity-70 rounded-md m-5 overflow-auto'>
-        <div className='p-5 font-sans text-lg antialiased'>
-          {chatMessages.map((message, index) => (
-            <div key={index} className={message.type === 'user' ? 'user-message' : 'server-message'}>
-              {message.type === 'user' ? (
-                <div className=" bg-white rounded-md p-3 m-3 flex flex-row">
-                  <div className='basis-6/7 pl-3'> {message.text}</div>
-                </div>
-              ) : (
-                <div className="bg-white rounded-md p-3 m-3">
-                <div>{message.text}</div>
-                {message.source && (
-                  <div className='pt-4 text-sm italic' onClick={() => handleToggleClick(index)} style={{ cursor: 'pointer' }}>
-                    Sources:
-                    {message.source.map((retrival, retrivalIndex) => (
-                      <div key={retrivalIndex}>
-                        {retrival.parentDoc} section {retrival.contentList}
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {showSourceArray[index] && (
-                  <div>
-                    {message.source.map((retrival, retrivalIndex) => (
-                      <div key={retrivalIndex}>
-                        {retrival.text}
-                      </div>
-                    ))}
-                  </div>
-                )}
-                  {message.source && (
-                    <div className='text-sm flex flex-col pt-4'>
-                      {responseRatings[index] === undefined && (
-                        <React.Fragment>
-                          Did this answer your question?
-                          <div className='underline  decoration-sky-900 text-sky-900 flex justify-end space-x-20'>
-                            <div  className="cursor-pointer" onClick={() => handleRating(index, true)}>Yes</div>
-                            <div  className="cursor-pointer" onClick={() => handleRating(index, false)}>No</div>
-                          </div>
-                        </React.Fragment>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-  
-      <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
-        <div className="flex size-full">
-          <input
-            type="text"
-            id="user_input"
-            className="flex-1 border p-2 mr-2 text-lg"
-            placeholder="Enter your text here"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-          />
-          <button onClick={submitToDatabase} className="rounded-full w-32">
-            Send
-          </button>
-        </div>
-      </div>
+      <UserInput userInput={userInput} setUserInput={setUserInput} submitToDatabase={submitToDatabase} />
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
     </div>
   );

@@ -1,12 +1,13 @@
 import React , { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar'
-import Home from './components/Home';
 import TermsAndConditions from './components/TermsAndConditions';
-import Message from './components/Message';
+import Message from './components/chatapp/ChatApp';
 import ConsentDialog from './components/ConsentDialog'
 import { apiEndpoints } from './config/EndPoints'
 import axios from 'axios';
+import UserGuide from './components/UserGuide';
+import ContactInformation from './components/ContactInformation';
 
 
 
@@ -44,7 +45,15 @@ const App = () => {
     <Router>
       <div className='flex h-screen bg-[#85A4B6] bg-opacity-50 relative'>
         <div className='w-1/5 p-4'><Sidebar/></div>
-        <div className='w-4/5 p-4 '><Message/></div>
+        <div className='w-4/5 p-4 '>
+        <Routes>
+          <Route path="/" element={<Message/>}/>
+          <Route path="/user-guide" element={<UserGuide />} />
+          <Route path="/privacy" element={<TermsAndConditions/>}/>
+          <Route path="/contact" element={<ContactInformation/>}/>
+        </Routes>
+          
+          </div>
 
       </div>
 
@@ -54,10 +63,6 @@ const App = () => {
             </div>
           )}
  
-      <Routes>
-        <Route path="/user-guide" element={<Home />} />
-        <Route path="/privacy" element={<TermsAndConditions />} />
-      </Routes>
    
     </Router>
   );

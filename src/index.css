@@ -25,3 +25,28 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+h3 {
+font-weight:bolder;
+font-size: larger;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ 
+
+::-webkit-scrollbar-thumb {
+    background: #85A4B6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0C4A6E;
+}
