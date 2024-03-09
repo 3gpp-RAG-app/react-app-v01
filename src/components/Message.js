@@ -1,3 +1,4 @@
+// Message.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiEndpoints } from '../config/EndPoints';
@@ -106,24 +107,39 @@ const Message = () => {
       </div>
       </div>
 
-      <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
-        <div className= "flex size-full">
+<div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
+  <div className="flex size-full">
+    <textarea
+      type="textarea"
+      id="user_input"
+      className="flex-1 border p-2 mr-2 text-lg"
+      placeholder="Enter your text here"
+      value={userInput}
+      onChange={(e) => setUserInput(e.target.value)}
+      style={{ height: "50px", minHeight: "50px", maxHeight: "200px" }}
+      onInput={() => {
+        const textArea = document.getElementById("user_input");
+        if (textArea.value.trim() === "") {
+          textArea.style.height = "50px"; // Set back to base height if empty
+        } else {
+          textArea.style.height = `${Math.min(textArea.scrollHeight, 200)}px`;
+        }
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault(); // Prevent default form submission
+          submitToDatabase(); // Call your submit function
+        }
+      }}
+    />
 
-        <input
-          type="text"
-          id="user_input"
-          className="flex-1 border p-2 mr-2 text-lg"
-          placeholder="Enter your text here"
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
-        />
+    <button onClick={submitToDatabase} className="rounded-full w-32">
+      Send
+    </button>
+  </div>
+</div>
 
-          <button onClick={submitToDatabase}className="rounded-full w-32">
-              Send
-          </button>
-        </div>
-        
-      </div>
+
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
     </div>
   );
