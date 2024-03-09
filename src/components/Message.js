@@ -112,7 +112,7 @@ const Message = () => {
         </div>
       </div>
 
-      <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
+      {!isChatbotTyping && <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
         <div className="flex size-full">
           <textarea
             type="textarea"
@@ -142,7 +142,7 @@ const Message = () => {
             Send
           </button>
         </div>
-      </div>
+      </div>}
 
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
     </div>
