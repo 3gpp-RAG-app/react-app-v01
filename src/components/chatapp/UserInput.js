@@ -46,7 +46,7 @@ const UserInput = ({ userInput, setUserInput, submitToDatabase }) => {
           ref={textareaRef}
           type="text"
           id="user_input"
-          className="flex-1 p-2 mr-2 text-lg resize-none overflow-hidden caret-transparent" 
+          className="flex-1 p-2 mr-2 text-lg resize-none overflow-hidden caret-sky-900" 
           placeholder="Enter your text here"
           value={userInput}
           onChange={handleInput}
