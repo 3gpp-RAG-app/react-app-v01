@@ -51,3 +51,7 @@ font-size: larger;
     background: #0C4A6E;
 }
 
+.user-message-text,
+.server-message-text {
+  white-space: pre-line;
+}

@@ -51,6 +51,12 @@ const UserInput = ({ userInput, setUserInput, submitToDatabase }) => {
           value={userInput}
           onChange={handleInput}
           style={{ minHeight: '56px' }} 
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !isSending && !e.shiftKey && !e.ctrlKey && !e.altKey) {
+              e.preventDefault(); // Prevent default form submission
+              handleSendClick(); // Call submit function
+            }
+          }}
         />
         <div className="flex items-center justify-center h-full">
           <button onClick={handleSendClick} className="w-30" disabled={isSending}>

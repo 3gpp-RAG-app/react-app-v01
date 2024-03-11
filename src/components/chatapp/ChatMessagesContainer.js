@@ -13,11 +13,11 @@ const ChatMessagesContainer = ({
         {chatMessages.map((message, index) => (
           <div key={index} className={message.type === 'user' ? 'user-message' : 'server-message'}>
             {message.type === 'user' ? (
-              <div className=" bg-white rounded-md p-3 m-3 flex flex-row">
+              <div className=" bg-white rounded-md p-3 m-3 flex flex-row user-message-text">
                 <div className='basis-6/7 pl-3'> {message.text}</div>
               </div>
             ) : (
-              <div className="bg-white rounded-md p-3 m-3">
+              <div className="bg-white rounded-md p-3 m-3 server-message-text">
                 <div>{message.text}</div>
                 {message.source && (
                   <div className='pt-4 text-sm italic' onClick={() => handleToggleClick(index)} style={{ cursor: 'pointer' }}>
