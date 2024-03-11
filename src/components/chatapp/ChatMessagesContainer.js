@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const ChatMessagesContainer = ({
   chatMessages,
@@ -7,18 +8,19 @@ const ChatMessagesContainer = ({
   responseRatings,
   handleRating,
 }) => {
+
   return (
     <div className='h-full basis-5/7 bg-white bg-opacity-70 rounded-md m-5 overflow-auto'>
       <div className='p-5 font-sans text-lg antialiased'>
         {chatMessages.map((message, index) => (
           <div key={index} className={message.type === 'user' ? 'user-message' : 'server-message'}>
             {message.type === 'user' ? (
-              <div className=" bg-white rounded-md p-3 m-3 flex flex-row user-message-text">
-                <div className='basis-6/7 pl-3'> {message.text}</div>
+              <div className=" bg-white rounded-md p-3 m-3 flex flex-row">
+                <div className='basis-6/7 pl-3 user-message-text'>{message.text}</div>
               </div>
             ) : (
-              <div className="bg-white rounded-md p-3 m-3 server-message-text">
-                <div>{message.text}</div>
+              <div className="bg-white rounded-md p-3 m-3">
+                <ReactMarkdown className="server-message-text">{message.text}</ReactMarkdown>
                 {message.source && (
                   <div className='pt-4 text-sm italic' onClick={() => handleToggleClick(index)} style={{ cursor: 'pointer' }}>
                     Sources:
@@ -32,9 +34,9 @@ const ChatMessagesContainer = ({
                 {showSourceArray[index] && (
                   <div>
                     {message.source.map((retrival, retrivalIndex) => (
-                      <div key={retrivalIndex}>
+                      <ReactMarkdown className="original-text-message" key={retrivalIndex}>
                         {retrival.text}
-                      </div>
+                      </ReactMarkdown>
                     ))}
                   </div>
                 )}

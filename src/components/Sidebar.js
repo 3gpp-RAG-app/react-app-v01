@@ -5,10 +5,13 @@ const Sidebar = () => {
   return (
     <div className="flex h-full pb-3 bg-[#487792] rounded-md">
       <div className="flex flex-col w-full ">
-        <div className="flex items-center justify-center bg-sky-900 p-3 text-white rounded-t-md">
-          <Link to="/" className="text-xl font-semibold">3gpp Chat</Link>
+        <div className="flex items-center justify-center bg-sky-900 p-3 text-white rounded-t-md text-xl font-semibold">
+          3GPP Chat
         </div>
         <nav className="mt-2">
+          <Link to="/" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
+            Chat
+          </Link>
           <Link to="/user-guide" className="block p-2 text-xl font-medium text-center text-white hover:bg-sky-900">
             User guide
           </Link>

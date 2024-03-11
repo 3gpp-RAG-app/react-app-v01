@@ -55,3 +55,7 @@ font-size: larger;
 .server-message-text {
   white-space: pre-line;
 }
+
+.original-text-message {
+  margin-top: 2em;
+}
