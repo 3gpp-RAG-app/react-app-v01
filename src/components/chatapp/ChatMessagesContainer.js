@@ -34,9 +34,9 @@ const ChatMessagesContainer = ({
                 {showSourceArray[index] && (
                   <div>
                     {message.source.map((retrival, retrivalIndex) => (
-                      <ReactMarkdown className="original-text-message" key={retrivalIndex}>
-                        {retrival.text}
-                      </ReactMarkdown>
+                      <div className="original-text-message" key={retrivalIndex}>
+                        <ReactMarkdown>{retrival.text}</ReactMarkdown>
+                      </div>
                     ))}
                   </div>
                 )}
