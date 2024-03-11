@@ -17,7 +17,7 @@ const Message = () => {
       return newArray;
     });
   };
-
+  
   const submitToDatabase = async () => {
 
     const userMessageForAPI = userInput; // change the input to use usermessageforapi instead so input can be cleared
@@ -91,11 +91,11 @@ const Message = () => {
             <div key={index} className={message.type === 'user' ? 'user-message' : 'server-message'}>
               {message.type === 'user' ? (
                 <div className=" bg-white rounded-md p-3 m-3 flex flex-row">
-                  <div className='basis-6/7 pl-3'> {message.text}</div>
+                  <div className='basis-6/7 pl-3 user-message-text' dangerouslySetInnerHTML={{ __html: message.text }} />
                 </div>
               ) : (
-                <div className="bg-white rounded-md p-3 m-3">
-                  <div>{message.text}</div>
+                <div className="bg-white rounded-md p-3 m-3 server-message-text">
+                  <div dangerouslySetInnerHTML={{ __html: message.text }} />
                   <div className='pt-4 text-sm italic' onClick={() => handleToggleClick(index)} style={{ cursor: 'pointer' }}>
                     Source: {message.source.parentDoc} section {message.source.contentList}
                   </div>
@@ -109,35 +109,32 @@ const Message = () => {
             </div>
           ))}
         </div>
-        
       </div>
-          {isChatbotTyping && <div className="m-6">Chatbot is typing...</div>}
+      {isChatbotTyping && <div className="m-6">Chatbot is typing...</div>}
 
       <div className="basis-1/7 rounded-md m-5 flex items-center justify-between bg-white p-2">
         <div className="flex size-full">
           <textarea
-            type="textarea"
-            id="user_input"
-            className="flex-1 border p-2 mr-2 text-lg"
-            placeholder="Enter your text here"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            style={{height: "50px", minHeight: "50px", maxHeight: "200px"}}
-            onInput={() => {
-              const textArea = document.getElementById("user_input");
-              textArea.style.height = "50px"; // initial height 50px
-              const newHeight = Math.max(50, textArea.scrollHeight);
-              textArea.style.height = `${newHeight}px`;
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey && !isChatbotTyping) {
-                e.preventDefault(); // Prevent default form submission
-                submitToDatabase(); // Call submit function
-              }
-            }}
+              type="textarea"
+              id="user_input"
+              className="flex-1 border p-2 mr-2 text-lg"
+              placeholder="Enter your text here"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              style={{height: "50px", minHeight: "50px", maxHeight: "200px"}}
+              onInput={() => {
+                const textArea = document.getElementById("user_input");
+                textArea.style.height = "50px"; // initial height 50px
+                const newHeight = Math.max(50, textArea.scrollHeight);
+                textArea.style.height = `${newHeight}px`;
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey && !isChatbotTyping) {
+                  e.preventDefault(); // Prevent default form submission
+                  submitToDatabase(); // Call submit function
+                }
+              }}
           />
-
-          
         </div>
         {!isChatbotTyping && <button onClick={submitToDatabase} className="rounded-full w-32">
             Send

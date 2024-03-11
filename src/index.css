@@ -25,3 +25,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.user-message-text,
+.server-message-text {
+  white-space: pre-line;
+}
