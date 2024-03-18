@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# 3GPP Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Welcome to the frontend of the 3GPP Assistant. This interface acts as a bridge between users and the server, where questions about 3GPP specifications are processed and answered using the available database. While the technical functions reside on the server side, this frontend facilitates the retrieval and presentation of relevant data in a format optimized for working with 3GPP specifications. It simplifies the access to information, allowing users to interact with 3GPP specifications effectively and efficiently.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Ensure you have Node.js installed on your machine.
+    Clone this repository to your local machine using:
+    git clone https://github.com/3gpp-RAG-app/react-app-v01.git.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Build
 
-### `npm test`
+    To build and serve the production-ready files, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Clone this repository to your local machine.
 
-### `npm run build`
+    git clone https://github.com/3gpp-RAG-app/react-app-v01.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Navigate to the project directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    cd react-app-v01
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Install dependencies using npm.
 
-### `npm run eject`
+    npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Build the project using the following command:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    npm run build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Start the server to serve the production build:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    npm start
 
-## Learn More
+    This command sets the PORT environment variable to 80 and serves the build directory using the serve command.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    You can also use the 'npm run dev' command
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Important Information
 
-### Code Splitting
+    Frontend works only on desktop currently and has no mobile support so keep that in mind when using it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deployment Instructions
 
-### Analyzing the Bundle Size
+    Frontends chatbot will not work without connection to the server and database so if you intend to deploy it make sure the connection to server is present.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Folder Structure
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+project/
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── assets/
+│   │   │   ├── antti.png
+│   │   │   ├── mufida.jpg
+│   │   │   ├── termsAndConditionsData.js
+│   │   │   ├── ug.jpeg
+│   │   │   ├── ug1.png
+│   │   │   └── yinan.jpeg
+│   │   ├── chatapp/
+│   │   │   ├── ChatApp.js
+│   │   │   ├── ChatMessagesContainer.js
+│   │   │   └── UserInput.js
+│   │   ├── About.js
+│   │   ├── ConsentDialog.js
+│   │   ├── ContactInformation.js
+│   │   ├── Privacy.js
+│   │   ├── Sidebar.js
+│   │   ├── TermsAndConditions.js
+│   │   └── UserGuide.js
+│   ├── config/
+│   │   └── EndPoints.js
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── Procfile
+├── README.md
+└── tailwind.config.js
