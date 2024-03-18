@@ -50,16 +50,11 @@ Welcome to the frontend of the 3GPP Assistant. This interface acts as a bridge b
 
 ## Folder Structure
 
-project/
-
-├── public/
-
-│   ├── favicon.ico
-
-│   ├── index.html
-
-│   ├── logo192.png
-
+project/\
+├── public/\
+│   ├── favicon.ico\
+│   ├── index.html\
+│   ├── logo192.png\
 │   ├── logo512.png
 
 │   ├── manifest.json
