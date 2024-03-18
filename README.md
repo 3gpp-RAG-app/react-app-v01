@@ -1,4 +1,4 @@
-# 3GPP Frontend
+# 3GPP Assistant Frontend
 
 ## Introduction
 
