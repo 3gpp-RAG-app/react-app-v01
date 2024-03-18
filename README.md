@@ -8,45 +8,45 @@ Welcome to the frontend of the 3GPP Assistant. This interface acts as a bridge b
 
 ### Requirements
 
-    Ensure you have Node.js installed on your machine.
-    Clone this repository to your local machine using:
-    git clone https://github.com/3gpp-RAG-app/react-app-v01.git.
+Ensure you have Node.js installed on your machine and have cloned the repository.
 
 ### Build
 
-    To build and serve the production-ready files, follow these steps:
+To build and serve the production-ready files, follow these steps:
 
-    Clone this repository to your local machine.
+Clone this repository to your local machine.
 
     git clone https://github.com/3gpp-RAG-app/react-app-v01.git
 
-    Navigate to the project directory.
+Navigate to the project directory.
 
     cd react-app-v01
 
-    Install dependencies using npm.
+Install dependencies using npm.
 
     npm install
 
-    Build the project using the following command:
+Build the project using the following command:
 
     npm run build
 
-    Start the server to serve the production build:
+Start the server to serve the production build:
 
     npm start
 
-    This command sets the PORT environment variable to 80 and serves the build directory using the serve command.
+This command sets the PORT environment variable to 80 and serves the build directory using the serve command.
 
-    You can also use the 'npm run dev' command
+You can also use the command:
+
+    npm run dev
 
 ## Important Information
 
-    Frontend works only on desktop currently and has no mobile support so keep that in mind when using it.
+Frontend works only on desktop currently and has no mobile support so keep that in mind when using it.
 
 ## Deployment Instructions
 
-    Frontends chatbot will not work without connection to the server and database so if you intend to deploy it make sure the connection to server is present.
+Frontends chatbot will not work without connection to the server and database so if you intend to deploy it make sure the connection to server is present.
 
 ## Folder Structure
 
