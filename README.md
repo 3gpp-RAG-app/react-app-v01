@@ -55,78 +55,41 @@ project/\
 │   ├── favicon.ico\
 │   ├── index.html\
 │   ├── logo192.png\
-│   ├── logo512.png
-
-│   ├── manifest.json
-
-│   └── robots.txt
-
-├── src/
-
-│   ├── components/
-
-│   │   ├── assets/
-
-│   │   │   ├── antti.png
-
-│   │   │   ├── mufida.jpg
-
-│   │   │   ├── termsAndConditionsData.js
-
-│   │   │   ├── ug.jpeg
-
-│   │   │   ├── ug1.png
-
-│   │   │   └── yinan.jpeg
-
-│   │   ├── chatapp/
-
-│   │   │   ├── ChatApp.js
-
-│   │   │   ├── ChatMessagesContainer.js
-
-│   │   │   └── UserInput.js
-
-│   │   ├── About.js
-
-│   │   ├── ConsentDialog.js
-
-│   │   ├── ContactInformation.js
-
-│   │   ├── Privacy.js
-
-│   │   ├── Sidebar.js
-
-│   │   ├── TermsAndConditions.js
-
-│   │   └── UserGuide.js
-
-│   ├── config/
-
-│   │   └── EndPoints.js
-
-│   ├── App.js
-
-│   ├── App.test.js
-
-│   ├── index.css
-
-│   ├── index.js
-
-│   ├── logo.svg
-
-│   ├── reportWebVitals.js
-
-│   └── setupTests.js
-
-├── .gitignore
-
-├── package-lock.json
-
-├── package.json
-
-├── Procfile
-
-├── README.md
-
-└── tailwind.config.js
+│   ├── logo512.png\
+│   ├── manifest.json\
+│   └── robots.txt\
+├── src/\
+│   ├── components/\
+│   │   ├── assets/\
+│   │   │   ├── antti.png\
+│   │   │   ├── mufida.jpg\
+│   │   │   ├── termsAndConditionsData.js\
+│   │   │   ├── ug.jpeg\
+│   │   │   ├── ug1.png\
+│   │   │   └── yinan.jpeg\
+│   │   ├── chatapp/\
+│   │   │   ├── ChatApp.js\
+│   │   │   ├── ChatMessagesContainer.js\
+│   │   │   └── UserInput.js\
+│   │   ├── About.js\
+│   │   ├── ConsentDialog.js\
+│   │   ├── ContactInformation.js\
+│   │   ├── Privacy.js\
+│   │   ├── Sidebar.js\
+│   │   ├── TermsAndConditions.js\
+│   │   └── UserGuide.js\
+│   ├── config/\
+│   │   └── EndPoints.js\
+│   ├── App.js\
+│   ├── App.test.js\
+│   ├── index.css\
+│   ├── index.js\
+│   ├── logo.svg\
+│   ├── reportWebVitals.js\
+│   └── setupTests.js\
+├── .gitignore\
+├── package-lock.json\
+├── package.json\
+├── Procfile\
+├── README.md\
+└── tailwind.config.js\
