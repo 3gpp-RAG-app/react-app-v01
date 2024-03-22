@@ -36,49 +36,6 @@ App: The main entry point of the application, sets up routing using React Router
 
 This application allows users to interact with a chatbot designed to provide information about 3GPP standards, with features for privacy policy acknowledgment, user guidance, and feedback collection.
 
-## Installation and Instructions
-
-### Requirements
-
-Ensure you have Node.js installed on your machine and have cloned the repository.
-
-### Build
-
-To build and serve the production-ready files, follow these steps:
-
-Clone this repository to your local machine.
-
-    git clone https://github.com/3gpp-RAG-app/react-app-v01.git
-
-Navigate to the project directory.
-
-    cd react-app-v01
-
-Install dependencies using npm.
-
-    npm install
-
-You can use this command to immediately run it:
-
-    npm run dev
-
-or you can build the project using the following command:
-
-    npm run build
-
-and start the build with this:
-
-    npm start
-
-If you wish to link this to the server change the url in Endpoints.js to the one your server has
-
-### Important Information
-
-The frontend only provides support for desktop usage. It's essential to note that the chatbot 
-within the frontend requires a connection to both the server and the database for functionality. 
-Therefore, when deploying the frontend, ensure that a stable connection to the server is established 
-to enable the chatbot's operation.
-
 ### Folder Structure
 
 project/\
@@ -125,3 +82,47 @@ project/\
 ├── Procfile\
 ├── README.md\
 └── tailwind.config.js\
+
+## Installation and Instructions
+
+### Requirements
+
+Ensure you have Node.js installed on your machine and have cloned the repository.
+
+### Build
+
+To build and serve the production-ready files, follow these steps:
+
+Clone this repository to your local machine.
+
+    git clone https://github.com/3gpp-RAG-app/react-app-v01.git
+
+Navigate to the project directory.
+
+    cd react-app-v01
+
+Install dependencies using npm.
+
+    npm install
+
+You can use this command to immediately run it:
+
+    npm run dev
+
+or you can build the project using the following command:
+
+    npm run build
+
+and start the build with this:
+
+    npm start
+
+If you wish to link this to the server change the url in Endpoints.js to the one your server has
+
+### Important Information
+
+The frontend only provides support for desktop usage. It's essential to note that the chatbot 
+within the frontend requires a connection to both the server and the database for functionality. 
+Therefore, when deploying the frontend, ensure that a stable connection to the server is established 
+to enable the chatbot's operation.
+
