@@ -1,3 +1,4 @@
+// ContactInformation.js
 import mufida from './assets/mufida.jpg'
 import yinan from './assets/yinan.jpeg'
 import antti from './assets/antti.png'

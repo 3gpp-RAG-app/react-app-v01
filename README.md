@@ -10,27 +10,27 @@ effectively and efficiently.
 
 ### Introduction to the code within the repository
 
-    Sidebar: Renders navigation links for different sections of the application - Chat, User Guide, Terms and Privacy, Assistance and Feedback.
+Sidebar: Renders navigation links for different sections of the application - Chat, User Guide, Terms and Privacy, Assistance and Feedback.
 
-    ChatApp: The main component responsible for displaying the chat interface where users can interact with the chatbot.
+ChatApp: The main component responsible for displaying the chat interface where users can interact with the chatbot.
 
-    UserInput: Allows users to input text messages and send them to the chatbot. It also handles sending messages on pressing the Enter key.
+UserInput: Allows users to input text messages and send them to the chatbot. It also handles sending messages on pressing the Enter key.
 
-    ChatMessagesContainer: Renders the messages exchanged between the user and the chatbot. It displays both user messages and the chatbot's responses. Users can also rate the responses.
+ChatMessagesContainer: Renders the messages exchanged between the user and the chatbot. It displays both user messages and the chatbot's responses. Users can also rate the responses.
 
-    About: Provides information about the 3GPP ChatBot, its mission, how it works, the importance of user feedback, and its privacy policy.
+About: Provides information about the 3GPP ChatBot, its mission, how it works, the importance of user feedback, and its privacy policy.
 
-    Privacy: Presents the privacy policy for the 3GPP ChatBot, detailing the information collected, its usage, sharing policies, user rights, and contact information for privacy concerns.
+Privacy: Presents the privacy policy for the 3GPP ChatBot, detailing the information collected, its usage, sharing policies, user rights, and contact information for privacy concerns.
 
-    UserGuide: Offers a user guide explaining the covered scope, third-party integrations, workflow, context injection, query recommendations, and system parameters of the chatbot.
+UserGuide: Offers a user guide explaining the covered scope, third-party integrations, workflow, context injection, query recommendations, and system parameters of the chatbot.
 
-    TermsAndConditions: Presents terms and conditions regarding the usage of the chatbot, including sections on general terms, data collection and usage, privacy policy, user consent, changes to terms, and contact information.
+TermsAndConditions: Presents terms and conditions regarding the usage of the chatbot, including sections on general terms, data collection and usage, privacy policy, user consent, changes to terms, and contact information.
 
-    ConsentDialog: Displays a dialog box asking users to agree to the data collection and usage policies before using the chatbot.
+ConsentDialog: Displays a dialog box asking users to agree to the data collection and usage policies before using the chatbot.
 
-    ContactInformation: Provides contact details for the development team, encouraging users to provide feedback and suggestions for improving the application.
+ContactInformation: Provides contact details for the development team, encouraging users to provide feedback and suggestions for improving the application.
 
-    App: The main entry point of the application, sets up routing using React Router, and manages the consent dialog display state and fetching of user ID.
+App: The main entry point of the application, sets up routing using React Router, and manages the consent dialog display state and fetching of user ID.
 
 This application allows users to interact with a chatbot designed to provide information about 3GPP standards, with features for privacy policy acknowledgment, user guidance, and feedback collection.
 

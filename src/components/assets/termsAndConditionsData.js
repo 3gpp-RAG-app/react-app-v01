@@ -1,3 +1,4 @@
+// termsAndConditionsData.js
 const termsAndConditionsArray = [
     {
         section: 'General Terms',
