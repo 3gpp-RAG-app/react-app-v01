@@ -30,6 +30,8 @@ ConsentDialog: Displays a dialog box asking users to agree to the data collectio
 
 ContactInformation: Provides contact details for the development team, encouraging users to provide feedback and suggestions for improving the application.
 
+Endpoints: file defines and exports an object named apiEndpoints, which contains specific API endpoints prefixed with a base URL (apiBaseUrl). These endpoints are related to various functionalities such as search, logs, and user session management within a Milvus application.
+
 App: The main entry point of the application, sets up routing using React Router, and manages the consent dialog display state and fetching of user ID.
 
 This application allows users to interact with a chatbot designed to provide information about 3GPP standards, with features for privacy policy acknowledgment, user guidance, and feedback collection.
@@ -67,6 +69,8 @@ or you can build the project using the following command:
 and start the build with this:
 
     npm start
+
+If you wish to link this to the server change the url in Endpoints.js to the one your server has
 
 ### Important Information
 
