@@ -26,7 +26,8 @@ const ChatMessagesContainer = ({
                     Sources:
                     {message.source.map((retrival, retrivalIndex) => (
                       <div key={retrivalIndex}>
-                        {retrival.parentDoc} section {retrival.contentList}
+                       {retrival.parentDoc} section {retrival.contentList}
+                       {/*CR: {retrival.cr} spec: {retrival.spec}*/}
                       </div>
                     ))}
                   </div>
@@ -35,7 +36,8 @@ const ChatMessagesContainer = ({
                   <div>
                     {message.source.map((retrival, retrivalIndex) => (
                       <div className="original-text-message" key={retrivalIndex}>
-                        <ReactMarkdown>{retrival.text}</ReactMarkdown>
+                        {<ReactMarkdown>{retrival.text}</ReactMarkdown>}
+                        <ReactMarkdown>{retrival.summary}</ReactMarkdown>
                       </div>
                     ))}
                   </div>

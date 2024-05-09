@@ -51,7 +51,10 @@ const Message = () => {
           ? response.data.retrivals.map((ret, index) => ({
               parentDoc: ret.parent_doc,
               contentList: ret.content_list,
+              //spec:  ret.spec,
+              //cr:  ret.cr_number,
               text: ret.text,
+              //summary,
               score: ret.score,
               rating: responseRatings[newMessageIndex + index] !== undefined ? responseRatings[newMessageIndex + index] : null,
             }))
