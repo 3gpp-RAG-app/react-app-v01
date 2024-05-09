@@ -1,3 +1,4 @@
+// Privacy.js
 const Privacy = () => {
   return (
     <div className="hidden md:flex md:flex-shrink-0 bg-purple-700">

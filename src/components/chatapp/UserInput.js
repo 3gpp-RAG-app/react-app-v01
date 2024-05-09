@@ -1,3 +1,4 @@
+// UserInput.js
 import React, { useRef, useState, useEffect } from 'react';
 
 const UserInput = ({ userInput, setUserInput, submitToDatabase }) => {

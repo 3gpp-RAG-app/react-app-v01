@@ -1,3 +1,4 @@
+// TermsAndConditions.js
 import React, { useState, useEffect } from 'react';
 import termsAndConditionsArray from './assets/termsAndConditionsData';
 

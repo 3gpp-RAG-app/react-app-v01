@@ -1,3 +1,4 @@
+// UserGuide.js
 import ug from './assets/ug.jpeg'
 import ug1 from './assets/ug1.png'
 const UserGuide = () => {

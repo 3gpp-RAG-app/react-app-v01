@@ -1,71 +1,128 @@
-# Getting Started with Create React App
+# 3GPP Assistant Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This is the repository for the frontend of the 3GPP Assistant. This interface acts as a bridge between users and the server, 
+where questions about 3GPP specifications are processed and answered using the available database. While the technical functions 
+reside on the server side, this frontend facilitates the retrieval and presentation of relevant data in a format optimized for 
+working with 3GPP specifications. It simplifies the access to information, allowing users to interact with 3GPP specifications 
+effectively and efficiently.
 
-In the project directory, you can run:
+### Introduction to the code within the repository
 
-### `npm start`
+Sidebar: Renders navigation links for different sections of the application - Chat, User Guide, Terms and Privacy, Assistance and Feedback.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ChatApp: The main component responsible for displaying the chat interface where users can interact with the chatbot.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+UserInput: Allows users to input text messages and send them to the chatbot. It also handles sending messages on pressing the Enter key.
 
-### `npm test`
+ChatMessagesContainer: Renders the messages exchanged between the user and the chatbot. It displays both user messages and the chatbot's responses. Users can also rate the responses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+About: Provides information about the 3GPP ChatBot, its mission, how it works, the importance of user feedback, and its privacy policy.
 
-### `npm run build`
+Privacy: Presents the privacy policy for the 3GPP ChatBot, detailing the information collected, its usage, sharing policies, user rights, and contact information for privacy concerns.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+UserGuide: Offers a user guide explaining the covered scope, third-party integrations, workflow, context injection, query recommendations, and system parameters of the chatbot.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+TermsAndConditions: Presents terms and conditions regarding the usage of the chatbot, including sections on general terms, data collection and usage, privacy policy, user consent, changes to terms, and contact information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ConsentDialog: Displays a dialog box asking users to agree to the data collection and usage policies before using the chatbot.
 
-### `npm run eject`
+ContactInformation: Provides contact details for the development team, encouraging users to provide feedback and suggestions for improving the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Endpoints: file defines and exports an object named apiEndpoints, which contains specific API endpoints prefixed with a base URL (apiBaseUrl). These endpoints are related to various functionalities such as search, logs, and user session management within a Milvus application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+App: The main entry point of the application, sets up routing using React Router, and manages the consent dialog display state and fetching of user ID.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This application allows users to interact with a chatbot designed to provide information about 3GPP standards, with features for privacy policy acknowledgment, user guidance, and feedback collection.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Folder Structure
 
-## Learn More
+project/\
+├── node_modules/\
+├── public/\
+│   ├── favicon.ico\
+│   ├── index.html\
+│   ├── logo192.png\
+│   ├── logo512.png\
+│   ├── manifest.json\
+│   └── robots.txt\
+├── src/\
+│   ├── components/\
+│   │   ├── assets/\
+│   │   │   ├── antti.png\
+│   │   │   ├── mufida.jpg\
+│   │   │   ├── termsAndConditionsData.js\
+│   │   │   ├── ug.jpeg\
+│   │   │   ├── ug1.png\
+│   │   │   └── yinan.jpeg\
+│   │   ├── chatapp/\
+│   │   │   ├── ChatApp.js\
+│   │   │   ├── ChatMessagesContainer.js\
+│   │   │   └── UserInput.js\
+│   │   ├── About.js\
+│   │   ├── ConsentDialog.js\
+│   │   ├── ContactInformation.js\
+│   │   ├── Privacy.js\
+│   │   ├── Sidebar.js\
+│   │   ├── TermsAndConditions.js\
+│   │   └── UserGuide.js\
+│   ├── config/\
+│   │   └── EndPoints.js\
+│   ├── App.js\
+│   ├── App.test.js\
+│   ├── index.css\
+│   ├── index.js\
+│   ├── logo.svg\
+│   ├── reportWebVitals.js\
+│   └── setupTests.js\
+├── .gitignore\
+├── package-lock.json\
+├── package.json\
+├── Procfile\
+├── README.md\
+└── tailwind.config.js\
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation and Instructions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Requirements
 
-### Code Splitting
+Ensure you have Node.js installed on your machine and have cloned the repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build
 
-### Analyzing the Bundle Size
+To build and serve the production-ready files, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clone this repository to your local machine.
 
-### Making a Progressive Web App
+    git clone https://github.com/3gpp-RAG-app/react-app-v01.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Navigate to the project directory.
 
-### Advanced Configuration
+    cd react-app-v01
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Install dependencies using npm.
 
-### Deployment
+    npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can use this command to immediately run it:
 
-### `npm run build` fails to minify
+    npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+or you can build the project using the following command:
+
+    npm run build
+
+and start the build with this:
+
+    npm start
+
+If you wish to link this to the server change the url in Endpoints.js to the one your server has
+
+### Important Information
+
+The frontend only provides support for desktop usage. It's essential to note that the chatbot 
+within the frontend requires a connection to both the server and the database for functionality. 
+Therefore, when deploying the frontend, ensure that a stable connection to the server is established 
+to enable the chatbot's operation.
 

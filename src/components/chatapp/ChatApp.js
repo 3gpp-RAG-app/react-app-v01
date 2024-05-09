@@ -1,3 +1,4 @@
+// ChatApp.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiEndpoints } from '../../config/EndPoints';
@@ -105,8 +106,6 @@ const Message = () => {
         responseRatings={responseRatings}
         handleRating={handleRating}
       />
-     
-  
       <UserInput userInput={userInput} setUserInput={setUserInput} submitToDatabase={submitToDatabase} />
       <div className='pl-5 pb-3 text-xs'>This Alpha release of the 3gpp chat app </div>
     </div>
