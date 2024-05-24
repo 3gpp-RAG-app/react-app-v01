@@ -5,7 +5,7 @@ import antti from './assets/antti.png'
 const ContactInformation = () => {
     return (
 <div className='bg-white bg-opacity-70 h-full rounded-md flex justify-center items-center'>
-  <div className='h-5/6 w-1/2 text-center'>
+  <div className='h-6/6 w-1/2 text-center'>
 
     <div className="text-2xl">
       Our team is eagerly awaiting feedback and ideas to improve the application.

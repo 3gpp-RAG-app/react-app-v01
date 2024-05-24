@@ -11,7 +11,7 @@ const ChatMessagesContainer = ({
 }) => {
 
   return (
-    <div className='h-full basis-5/7 bg-white bg-opacity-70 rounded-md m-5 overflow-auto'>
+    <div className='h-full basis-5/7 bg-white bg-opacity-70 rounded-md m-4 overflow-auto'>
       <div className='p-5 font-sans text-lg antialiased'>
         {chatMessages.map((message, index) => (
           <div key={index} className={message.type === 'user' ? 'user-message' : 'server-message'}>
@@ -27,8 +27,8 @@ const ChatMessagesContainer = ({
                     Sources:
                     {message.source.map((retrival, retrivalIndex) => (
                       <div key={retrivalIndex}>
-                       {retrival.parentDoc} section {retrival.contentList}
-                       {/*CR: {retrival.cr} spec: {retrival.spec}*/}
+                        {retrival.parentDoc} section {retrival.contentList}
+                        {/*CR: {retrival.cr} spec: {retrival.spec}*/}
                       </div>
                     ))}
                   </div>
@@ -48,7 +48,7 @@ const ChatMessagesContainer = ({
                     {responseRatings[index] === undefined && (
                       <React.Fragment>
                         Did this answer your question?
-                        <div className='underline  decoration-sky-900 text-sky-900 flex justify-end space-x-20'>
+                        <div className='underline decoration-sky-900 text-sky-900 flex justify-end space-x-20'>
                           <div className="cursor-pointer" onClick={() => handleRating(index, true)}>Yes</div>
                           <div className="cursor-pointer" onClick={() => handleRating(index, false)}>No</div>
                         </div>
